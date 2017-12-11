@@ -1,11 +1,12 @@
 import os
-import datetime
+from datetime import datetime
+import time
 import tensorflow as tf
 import numpy as np
 import abc
 
 
-class Neon(object):
+class NeonTrainer(object):
     """
         This example implements a stable training and evaluating framework for Deep Learning.
     This is a production friendly implementation for reuse and deployment.
@@ -26,9 +27,10 @@ class Neon(object):
         self.num_gpus = 1
         self.TOWER_NAME = 'universetower_neon'
 
-        self.INITIAL_LEARNING_RATE = 1e-3
+        self.INITIAL_LEARNING_RATE = 1e-2
         self.NUM_EPOCHS_PER_DECAY = 350.0
         self.LEARNING_RATE_DECAY_FACTOR = 0.1
+        self.DECAY_STEPS = 5000
 
         if not os.path.isdir(self.train_dir):
             os.makedirs(self.train_dir)
@@ -56,17 +58,17 @@ class Neon(object):
         return
 
     @abc.abstractmethod
-    def losses(self, one_hot_targets, logits):
+    def losses(self, targets, logits):
         """
         abstract method for defining loss function
-        :param one_hot_targets:
+        :param targets:
         :param logits:
         :return:
         """
         return
 
     @abc.abstractmethod
-    def evaluate(self, checkpoint_dir, checkpoint_name=None, batch_size=32):
+    def evaluate(self, checkpoint_dir, batch_size, checkpoint_name=None, ):
         """
         abstract method for evaluating model
         :param checkpoint_dir:
@@ -89,11 +91,9 @@ class Neon(object):
                                           [],
                                           initializer=tf.constant_initializer(0),
                                           trainable=False)
-            num_batches_per_epoch = self.neutron.num_samples_to_train / batch_size
-            decay_step = int(num_batches_per_epoch * self.NUM_EPOCHS_PER_DECAY)
             learning_rate = tf.train.exponential_decay(self.INITIAL_LEARNING_RATE,
                                                        global_step=global_step,
-                                                       decay_steps=decay_step,
+                                                       decay_steps=self.DECAY_STEPS,
                                                        decay_rate=self.LEARNING_RATE_DECAY_FACTOR,
                                                        staircase=True)
             optimizer = tf.train.GradientDescentOptimizer(learning_rate)
@@ -101,15 +101,15 @@ class Neon(object):
             # give a batch of data to each GPU for computing gradients; cpu collects the gradient and makes updates
             tower_grads = []
             with tf.variable_scope(tf.get_variable_scope()):
-                minibatch_size = batch_size / self.num_gpus
+                minibatch_size = int(batch_size / self.num_gpus)
                 for i in range(self.num_gpus):
-                    with tf.device('/gpu:%d' % i), tf.name_scope("%s_%d" % (self.TOWER_NAME, i)) as scope:
+                    with tf.device('/cpu:%d' % i), tf.name_scope("%s_%d" % (self.TOWER_NAME, i)) as scope:
                         inputs, targets = self.load_batch(minibatch_size, is_training=True, num_threads=1)
                         logits = self.model(inputs,
                                             num_classes=self.neutron.vocabulary_size,
                                             is_training=True)
-                        one_hot_targets = tf.one_hot(targets, self.neutron.vocabulary_size)
-                        loss = self.losses(one_hot_targets, logits)
+                        targets = tf.reshape(targets, [batch_size, 1])
+                        loss = self.losses(targets, logits)
                         tf.add_to_collection('losses', loss)
                         losses = tf.get_collection('losses', scope=scope)
                         total_loss = tf.add_n(losses, name='total_loss')
@@ -136,9 +136,9 @@ class Neon(object):
             # add some summaries
             summaries = tf.get_collection(tf.GraphKeys.SUMMARIES)
             summaries.append(tf.summary.scalar('learning_rate', learning_rate))
-            summaries.append('total_loss', total_loss)
+            summaries.append(tf.summary.scalar('total_loss', total_loss))
             for var in tf.trainable_variables():
-                summaries.append(tf.summary.histogram(var))
+                summaries.append(tf.summary.histogram(var.op.name, var))
             summary_op = tf.summary.merge(summaries)
             summary_writer = tf.summary.FileWriter(self.train_dir, self.graph)
             global_var_init = tf.global_variables_initializer()
@@ -160,9 +160,9 @@ class Neon(object):
                 for step in range(max_steps):
                     if coord.should_stop():
                         break
-                    step_start_time = datetime.time.time()
-                    _, step_loss = self.session.run([train_op, total_loss])
-                    duration = datetime.time.time() - step_start_time
+                    step_start_time = time.time()
+                    _, step_loss, _global_step = self.session.run([train_op, total_loss, global_step])
+                    duration = time.time() - step_start_time
                     assert not np.isnan(step_loss), "Optimization diverged at step: %d" % step
                     if step % 1 == 0:
                         # print status
@@ -172,7 +172,7 @@ class Neon(object):
                         print(trainer_msg % (datetime.now(), step, step_loss, examples_per_second, duration))
                     if step % 100:
                         summary_str = self.session.run(summary_op)
-                        summary_writer.add_summary(summary_str, global_step=global_step)
+                        summary_writer.add_summary(summary_str, global_step=_global_step)
                     if (step % 1000) or (step == max_steps - 1):
                         checkpoint_path = os.path.join(self.train_dir, 'latest_model.ckpt')
                         saver.save(self.session, checkpoint_path, global_step=global_step)

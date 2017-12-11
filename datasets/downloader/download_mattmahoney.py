@@ -1,12 +1,13 @@
-import json
 import os
 import urllib
 import collections
 
+import pickle
+
 url = 'http://mattmahoney.net/dc/'
 
 
-def maybe_download(filename, required_bytes):
+def maybe_download(filename, required_bytes=31344016):
     if not os.path.isdir(os.path.dirname(filename)):
         os.makedirs(os.path.dirname(filename))
     if not os.path.isfile(filename):
@@ -20,15 +21,15 @@ def maybe_download(filename, required_bytes):
 
 
 def save_vocabulary(save_name, vocabulary, reversed_vocabulary):
-    with open(save_name, 'w+') as f:
-        json.dump([vocabulary, reversed_vocabulary], f)
+    with open(save_name, 'wb+') as f:
+        pickle.dump([vocabulary, reversed_vocabulary], f)
 
 
 def restore_vocabulary(save_name):
     if not os.path.isfile(save_name):
         raise Exception("saved vocabulary not found")
-    with open(save_name, 'r') as f:
-        dictionary, reversed_dictionary = json.load(f)
+    with open(save_name, 'rb') as f:
+        dictionary, reversed_dictionary = pickle.load(f)
     return dictionary, reversed_dictionary
 
 
@@ -36,7 +37,6 @@ def create_dataset(words, vocabulary_size):
     count = [["UNK", -1]]
     count.extend(collections.Counter(words).most_common(vocabulary_size - 1))
     dictionary = dict()
-    print(count[:10])
     for word, _ in count:
         if word not in dictionary:
             dictionary[word] = len(dictionary)

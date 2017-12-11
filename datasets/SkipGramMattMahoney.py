@@ -2,11 +2,11 @@ import os
 import zipfile
 import tensorflow as tf
 
-from neutrons.downloader.download_mattmahoney import maybe_download, save_vocabulary, create_dataset, restore_vocabulary
-from neutrons.preprocessing.skipgram_preprocess import write_skipgrams_to_tfrecord
+from datasets.downloader.download_mattmahoney import maybe_download, save_vocabulary, create_dataset, restore_vocabulary
+from datasets.preprocessing.skipgram_preprocess import write_skipgrams_to_tfrecord
 
 
-class NeutronMattMahoney(object):
+class SkipGramMattMahoney(object):
     TRAIN_FILE = 'train.tfrecords'
     VALIDATION_FILE = 'validate.tfrecords'
     TEST_FILE = 'test.tfrecords'
@@ -16,10 +16,11 @@ class NeutronMattMahoney(object):
     }
 
     def __init__(self, data_dir, graph, vocabulary_size=50000):
+        super(SkipGramMattMahoney, self).__init__()
         self.data_dir = data_dir
         self.graph = graph
         self.vocabulary_size = vocabulary_size
-        self.vocabulary_file = os.path.join(self.data_dir, "vocabulary.json")
+        self.vocabulary_file = os.path.join(self.data_dir, "vocabulary.pickle")
 
     def download(self):
         text_data = 'text8.zip'
@@ -27,20 +28,20 @@ class NeutronMattMahoney(object):
         filename = os.path.join(self.data_dir, text_data)
         return maybe_download(filename, required_bytes)
 
-    def download_and_convert_skipgram(self):
+    def download_and_convert_skipgram(self, num_skips=1, skip_window=2):
         vocabulary_size = 50000
         filename = self.download()
         with zipfile.ZipFile(filename) as f:
-            vocabulary = tf.compat.as_str(f.read(f.namelist()[0])).split()
-        print("Length of vocabulary " + str(len(vocabulary)))
-        data, count, dictionary, reversed_dictionary = create_dataset(vocabulary, vocabulary_size)
+            corpus = tf.compat.as_str(f.read(f.namelist()[0])).split()
+        print("Length of corpus " + str(len(corpus)))
+        data, count, dictionary, reversed_dictionary = create_dataset(corpus, vocabulary_size)
         save_vocabulary(self.vocabulary_file, dictionary, reversed_dictionary)
-        del vocabulary
+        del corpus
 
         # create tfrecord saver for training
         train_filename = os.path.join(self.data_dir, 'train.tfrecords')
         writer = tf.python_io.TFRecordWriter(train_filename)
-        write_skipgrams_to_tfrecord(data, writer)
+        write_skipgrams_to_tfrecord(data[:2*vocabulary_size], writer, num_skips, skip_window)
         writer.close()
 
     def load_vocabulary(self):
