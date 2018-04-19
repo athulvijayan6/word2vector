@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c12e4203-c16f-44dc-a728-e3bb04e6bfd8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datasets/GloVeMattMahoney.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datasets/downloader/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datasets/preprocessing/glove_preprocess.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/glove/MagnesiumModel.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/glove/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/glove/train_mattmahoney.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/seq2seq/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/word2vec/MagnesiumModel.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/word2vec/train_mattmahoney.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/neutrons/datasets/MattMahoneyDataset.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/neutrons/datasets/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/word2vec/Magnesium.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/word2vec/train_magnesium_mattmahoney.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Neon.py" afterPath="$PROJECT_DIR$/NeonTrainer.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/neutrons/__init__.py" afterPath="$PROJECT_DIR$/datasets/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/neutrons/downloader/__init__.py" afterPath="$PROJECT_DIR$/char2nlm/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/neutrons/downloader/download_mattmahoney.py" afterPath="$PROJECT_DIR$/datasets/downloader/download_mattmahoney.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/neutrons/neutron_mattmahoney.py" afterPath="$PROJECT_DIR$/datasets/SkipGramMattMahoney.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/neutrons/preprocessing/__init__.py" afterPath="$PROJECT_DIR$/datasets/preprocessing/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/neutrons/preprocessing/skipgram_preprocess.py" afterPath="$PROJECT_DIR$/datasets/preprocessing/skipgram_preprocess.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="c12e4203-c16f-44dc-a728-e3bb04e6bfd8" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +17,8 @@
       <file leaf-file-name="MagnesiumModel.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/word2vec/MagnesiumModel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+            <state relative-caret-position="324">
+              <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -49,7 +27,7 @@
       <file leaf-file-name="NeonTrainer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NeonTrainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
+            <state relative-caret-position="54">
               <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="17" />
               <folding />
             </state>
@@ -59,7 +37,7 @@
       <file leaf-file-name="train_mattmahoney.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/word2vec/train_mattmahoney.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="882">
               <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding />
             </state>
@@ -69,7 +47,7 @@
       <file leaf-file-name="SkipGramMattMahoney.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasets/SkipGramMattMahoney.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
+            <state relative-caret-position="54">
               <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="25" />
               <folding />
             </state>
@@ -79,7 +57,7 @@
       <file leaf-file-name="GloVeMattMahoney.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/datasets/GloVeMattMahoney.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
+            <state relative-caret-position="108">
               <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
               <folding />
             </state>
@@ -121,7 +99,7 @@
       <file leaf-file-name="download_mattmahoney.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasets/downloader/download_mattmahoney.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
+            <state relative-caret-position="90">
               <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
               <folding />
             </state>
@@ -251,14 +229,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -283,7 +261,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.train_magnesium_mattmahoney">
+  <component name="RunManager">
     <configuration name="train_magnesium_mattmahoney" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -301,6 +279,7 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <recent_temporary>
       <list size="1">
@@ -334,20 +313,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1537" height="905" extended-state="6" />
+    <frame x="0" y="0" width="1360" height="768" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25117528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.49764943" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.50235057" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5019355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25073528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -355,6 +335,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.49764943" order="6" side_tool="false" content_ui="tabs" />
@@ -417,13 +398,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neutrons/datasets/MattMahoneyDataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/neutrons/datasets/MattMahoneyDataset.py" />
     <entry file="file://$PROJECT_DIR$/datasets/downloader/download_mattmahoney.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
@@ -655,13 +630,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.5/dist-packages/tensorflow/python/summary/writer/writer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/tensorflow/python/summary/writer/writer.py" />
     <entry file="file://$PROJECT_DIR$/datasets/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -671,7 +640,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/datasets/downloader/download_mattmahoney.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
+        <state relative-caret-position="90">
           <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
           <folding />
         </state>
@@ -679,7 +648,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NeonTrainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
+        <state relative-caret-position="54">
           <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="17" />
           <folding />
         </state>
@@ -687,7 +656,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/word2vec/train_mattmahoney.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="882">
           <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
@@ -695,8 +664,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/word2vec/MagnesiumModel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+        <state relative-caret-position="324">
+          <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -709,14 +678,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neutrons/datasets/MattMahoneyDataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/neutrons/datasets/MattMahoneyDataset.py" />
     <entry file="file://$PROJECT_DIR$/datasets/preprocessing/glove_preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -745,7 +707,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/datasets/SkipGramMattMahoney.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
+        <state relative-caret-position="54">
           <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="25" />
           <folding />
         </state>
@@ -753,7 +715,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/datasets/GloVeMattMahoney.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
+        <state relative-caret-position="108">
           <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding />
         </state>
