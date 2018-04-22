@@ -1,0 +1,15 @@
+[submodule "languagelearn/char2nlm"]
+	path = languagelearn/char2nlm
+	url = https://github.com/athulvijayan6/char2nlm.git
+[submodule "languagelearn/languagedatasets"]
+	path = languagelearn/languagedatasets
+	url = https://github.com/athulvijayan6/languagedatasets.git
+[submodule "languagelearn/glovevectors"]
+	path = languagelearn/glovevectors
+	url = https://github.com/athulvijayan6/glovevectors.git
+[submodule "languagelearn/seq2seq"]
+	path = languagelearn/seq2seq
+	url = https://github.com/athulvijayan6/seq2seq.git
+[submodule "languagelearn/word2vector"]
+	path = languagelearn/word2vector
+	url = https://github.com/athulvijayan6/word2vector.git
